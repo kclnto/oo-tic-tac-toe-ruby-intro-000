@@ -91,10 +91,10 @@ class TicTacToe
   end
 
 
-  def current_player(board)
+  def current_player
      x_turns = 0
      o_turns = 0
-    for turns in board do
+    for turns in @board do
       if turns == "X"
         x_turns += 1
       elsif turns == "O"
@@ -105,9 +105,9 @@ class TicTacToe
       return "X"
     elsif x_turns > o_turns
       return "O"
-    elsif (x_turns == o_turns) && (over?(board) == false)
+    elsif (x_turns == o_turns) && (over? == false)
       return "X"
-      elsif (x_turns == o_turns) && (over?(board) == true)
+      elsif (x_turns == o_turns) && (over? == true)
       return "X"
     else
       return "kacy wtf"
