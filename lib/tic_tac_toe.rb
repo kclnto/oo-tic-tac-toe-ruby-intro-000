@@ -115,4 +115,73 @@ class TicTacToe
   end
 
 
+  def won?(board)
+    for win_combination in WIN_COMBINATIONS do
+      win_index_1 = win_combination[0]
+      win_index_2 = win_combination[1]
+      win_index_3 = win_combination[2]
+  
+      position_1 = board[win_index_1]
+      position_2 = board[win_index_2]
+      position_3 = board[win_index_3]
+  
+      if position_1 == "X" && position_2 == "X" && position_3  == "X"
+        return win_combination
+      end
+  
+      if position_1 == "O" && position_2 == "O" && position_3  == "O"
+        return win_combination
+      end
+    end
+    return false
+  end
+  
+  def full?(board)
+    for each in board do
+      if each == " " || each == nil
+        return false
+      end
+    end
+    return true
+  end
+  
+  def draw?(board)
+    if won?(board) == false && full?(board) == true
+      return true
+    else
+      return false
+    end
+  end
+  
+  def over?(board)
+    if won?(board) != false || draw?(board) == true || full?(board) == true
+      return true
+    else
+      return false
+    end
+  end
+  
+  def winner(board)
+    if over?(board) == true
+      if board[won?(board)[0]] == "X"
+        return "X"
+      elsif board[won?(board)[0]] == "O"
+        return "O"
+      end
+    end
+  end
+  
+  def play(board)
+    until over?(board) == true
+      turn(board)
+    end
+    if won?(board) != false
+      winner = winner(board)
+      puts "Congratulations #{winner}!"
+    elsif draw?(board) == true
+      puts "Cat's Game!"
+    end
+  end
+
+
 end
