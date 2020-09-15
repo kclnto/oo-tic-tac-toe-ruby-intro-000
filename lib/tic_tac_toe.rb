@@ -92,26 +92,7 @@ class TicTacToe
 
 
   def current_player
-     x_turns = 0
-     o_turns = 0
-    for turns in @board do
-      if turns == "X"
-        x_turns += 1
-      elsif turns == "O"
-        o_turns += 1
-      end
-    end
-    if o_turns > x_turns
-      return "X"
-    elsif x_turns > o_turns
-      return "O"
-    elsif (x_turns == o_turns) && (over? == false)
-      return "X"
-      elsif (x_turns == o_turns) && (over? == true)
-      return "X"
-    else
-      return "kacy wtf"
-    end
+    turn_count % 2 == 0 ? "X" : "O"
   end
 
 
