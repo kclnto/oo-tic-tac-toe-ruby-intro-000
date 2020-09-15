@@ -27,4 +27,6 @@ class TicTacToe
   end
   
   
+  def input_index
+  end
 end
