@@ -28,6 +28,14 @@ class TicTacToe
   
   
   def input_index
+    input = input.to_i
+    input = input -1
+    @index = input
+    return @index
+  end
+
+
+  def move
   end
 
 
