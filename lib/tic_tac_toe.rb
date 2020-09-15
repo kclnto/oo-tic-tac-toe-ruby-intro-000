@@ -78,9 +78,9 @@ class TicTacToe
   end
 
 
-  def turn_count(board)
+  def turn_count
     count = 0
-    for turn in board do
+    for turn in @board do
       if turn == "X"
         count += 1
       elsif turn == "O"
@@ -89,4 +89,6 @@ class TicTacToe
     end
     return count
   end
+
+
 end
